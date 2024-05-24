@@ -1,0 +1,19 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: update repository index
+    apt:
+      update_cache: yes
+
+  - name: install apache2  package
+    apt:
+      name: btop
+      state: latest
+
+  - name: install tldr
+    apt:
+      name: tldr
+      state: latest
